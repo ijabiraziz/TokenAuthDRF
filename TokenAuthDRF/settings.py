@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'rest_framework.authtoken',
+    
+    #Custom App
+    'myapp',
+
 ]
 
 MIDDLEWARE = [
@@ -50,6 +57,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'TokenAuthDRF.urls'
+
+
+#Activate TOkenAuthentication
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 TEMPLATES = [
     {
